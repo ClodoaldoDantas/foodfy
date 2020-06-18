@@ -14,4 +14,18 @@
       <img src="/assets/chef.png" alt="Chef ilustração" />
     </div>
   </section>
+
+  <!-- RECIPES -->
+  <section class="recipes">
+    <h2 class="recipes__title">Mais acessadas</h2>
+    <div class="recipes__grid">
+      {% for recipe in recipes %}
+        <div class="recipe" id="{{loop.index}}">
+          <img src="{{ recipe.image }}" alt="{{ recipe.title }}" />
+          <h3>{{ recipe.title }}</h3>
+          <span>por {{ recipe.author }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
 {% endblock %}

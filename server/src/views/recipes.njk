@@ -1,0 +1,16 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+  <!-- RECIPES -->
+  <section class="recipes">
+    <div class="recipes__grid">
+      {% for recipe in recipes %}
+        <div class="recipe" id="{{loop.index}}">
+          <img src="{{ recipe.image }}" alt="{{ recipe.title }}" />
+          <h3>{{ recipe.title }}</h3>
+          <span>por {{ recipe.author }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
