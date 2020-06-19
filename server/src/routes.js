@@ -16,4 +16,11 @@ routes.get('/recipes', (req, res) => {
   res.render('recipes', { recipes });
 });
 
+routes.get('/recipes/:index', (req, res) => {
+  const { index } = req.params;
+  const recipe = recipes[index];
+
+  res.render('recipe', { recipe });
+});
+
 module.exports = routes;

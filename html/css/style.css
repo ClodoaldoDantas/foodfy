@@ -78,7 +78,13 @@ body {
 
 @media only screen and (max-width: 768px) {
   .header > .container {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header__brand {
+    margin-right: 0;
+    margin-bottom: 1rem;
   }
 
   .header__link:first-child {

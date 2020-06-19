@@ -1,0 +1,58 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+  <link rel="stylesheet" href="/css/detail.css" />
+{% endblock %}
+
+{% block content %}
+  <section class="detail">
+    <header class="detail__header">
+      <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+      <h1>{{ recipe.title }}</h1>
+      <span>por {{ recipe.author }}</span>
+    </header>
+
+    <div class="detail__content">
+      <div class="detail__heading">
+        <h3>Ingredientes</h3>
+        <a class="toggle" data-target="ingredients" href="#">Esconder</a>
+      </div>
+      
+      <ul id="ingredients">    
+        {% for ingredient in recipe.ingredients %}
+          <li>{{ ingredient }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="detail__content">
+      <div class="detail__heading">
+        <h3>Modo de preparo</h3>
+        <a class="toggle" data-target="preparation" href="#">
+          Esconder
+        </a>
+      </div>
+      <ul id="preparation">    
+        {% for item in recipe.preparation %}
+          <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    {% if recipe.information %}
+      <div class="detail__content">
+        <div class="detail__heading">
+          <h3>Informações adicionais</h3>
+          <a class="toggle" data-target="information" href="#">
+            Esconder
+          </a>
+        </div>
+        <p id="information">{{ recipe.information }}</p>
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}
+
+{% block scripts %}
+  <script src="/js/detail.js"></script>
+{% endblock %}
