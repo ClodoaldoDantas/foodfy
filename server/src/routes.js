@@ -1,26 +1,13 @@
-const express = require('express');
+const express = require("express");
 const routes = express.Router();
 
-const recipes = require('./data/recipes');
-const featuredRecipes = recipes.slice(0, 6);
+// controllers
+const pages = require("./controllers/pages");
 
-routes.get('/', (req, res) => {
-  res.render('index', { recipes: featuredRecipes });
-});
-
-routes.get('/about', (req, res) => {
-  res.render('about');
-});
-
-routes.get('/recipes', (req, res) => {
-  res.render('recipes', { recipes });
-});
-
-routes.get('/recipes/:index', (req, res) => {
-  const { index } = req.params;
-  const recipe = recipes[index];
-
-  res.render('recipe', { recipe });
-});
+// page routes
+routes.get("/", pages.index);
+routes.get("/about", pages.about);
+routes.get("/recipes", pages.recipes);
+routes.get("/recipes/:index", pages.show);
 
 module.exports = routes;
