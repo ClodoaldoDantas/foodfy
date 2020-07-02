@@ -11,10 +11,15 @@
           <div class="item__content">
             <h3>{{ recipe.title }}</h3>
             <span>por {{ recipe.author }}</span>
-            <a href="/admin/recipes">Visualizar</a>
+            <a href="/admin/recipes/{{loop.index0}}">Visualizar</a>
           </div>
         </div>
       {% endfor %}
     </div>
+
+    <div class="admin-footer">
+      <a class="btn" href="/admin/recipes/create">Nova receita</a>
+    </div>
+    
   </section>
 {% endblock %}

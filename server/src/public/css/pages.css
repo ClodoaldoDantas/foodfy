@@ -76,7 +76,8 @@
 .recipe img {
   border-radius: 1.5rem;
   width: 30rem;
-  height: auto;
+  height: 10rem;
+  object-fit: cover;
   margin-bottom: 2rem;
 }
 

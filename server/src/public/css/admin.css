@@ -1,3 +1,25 @@
+/** HEADER **/
+.admin-header {
+  padding: 5rem 0 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-header-actions {
+  display: flex;
+}
+
+.admin-header-actions .btn:last-child {
+  margin-left: 1rem;
+}
+
+/** FOOTER **/
+.admin-footer {
+  margin-top: 3rem;
+}
+
 /** HOME **/
 .admin-home {
   margin: 5rem 0;
@@ -52,4 +74,44 @@
   .admin-home .grid {
     grid-template-columns: 100%;
   }
+}
+
+/** FORM **/
+.form__group {
+  margin-bottom: 3rem;
+}
+
+.form__group label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.form__group input,
+.form__group textarea {
+  width: 100%;
+  padding: 1.5rem 2rem;
+  border-radius: 0.4rem;
+  border: 1px solid #ddd;
+  outline: 0;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+}
+
+.form__group textarea {
+  min-height: 25rem;
+}
+
+.form__group input + input {
+  margin-top: 1rem;
+}
+
+.form__group a {
+  display: block;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-top: 1.5rem;
 }

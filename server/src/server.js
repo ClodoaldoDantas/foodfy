@@ -1,5 +1,6 @@
 const express = require("express");
 const nunjucks = require("nunjucks");
+const methodOverride = require("method-override");
 const path = require("path");
 
 const app = express();
@@ -16,7 +17,9 @@ nunjucks.configure(viewDir, {
   noCache: true,
 });
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(publicDir));
+app.use(methodOverride("_method"));
 app.use(routes);
 
 app.listen(5000, () =>

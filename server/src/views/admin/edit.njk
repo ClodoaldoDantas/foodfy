@@ -1,0 +1,38 @@
+{% extends "layout/admin.njk" %}
+
+{% block content %}
+  <section class="admin-save">
+    <form action="/admin/recipes?_method=PUT" method="POST">
+      <div class="admin-header">
+        <h1>Editando receita</h1>
+        <div class="admin-header-actions">
+          <button type="button" id="open" class="btn btn--danger">
+            Deletar
+          </button>
+          <button type="submit" class="btn">Salvar receita</button>
+        </div>
+
+        {% if message %}
+          <span class="error">* {{ message }}</span>
+        {% endif %}
+      </div>
+
+      <input type="hidden" name="id" value={{ id }}>
+      {% include 'admin/fields.njk' %}
+    </form>
+
+    <!-- MODAL -->
+    <div class="modal-overlay">
+      <div class="modal">
+        <h3>Deseja realmente remover este produto ?</h3>
+        <form action="/admin/recipes?_method=DELETE" method="POST" class="modal-form">
+          <input type="hidden" name="id" value={{ id }}>
+          <button type="button" id="cancel" class="btn">Cancelar</button>
+          <button type="submit" class="btn btn--danger">Remover</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="/js/modal-delete.js"></script>
+{% endblock %}

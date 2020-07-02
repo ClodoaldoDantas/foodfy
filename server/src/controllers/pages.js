@@ -1,21 +1,21 @@
-const recipes = require("../../data.json");
+const data = require("../../data.json");
 
 exports.index = (req, res) => {
-  const filteredRecipes = recipes.slice(0, 6);
-  res.render("pages/index", { recipes: filteredRecipes });
+  const filteredRecipes = data.recipes.slice(0, 6);
+  return res.render("pages/index", { recipes: filteredRecipes });
 };
 
 exports.about = (req, res) => {
-  res.render("pages/about");
+  return res.render("pages/about");
 };
 
 exports.recipes = (req, res) => {
-  res.render("pages/recipes", { recipes });
+  return res.render("pages/recipes", { recipes: data.recipes });
 };
 
 exports.show = (req, res) => {
-  const { index } = req.params;
-  const recipe = recipes[index];
+  const { id } = req.params;
+  const recipe = data.recipes[id];
 
-  res.render("pages/recipe", { recipe });
+  return res.render("pages/recipe", { recipe });
 };
