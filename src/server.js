@@ -8,7 +8,6 @@ const routes = require("./routes");
 const viewDir = path.resolve(__dirname, "views");
 const publicDir = path.resolve(__dirname, "public");
 
-app.set("views", viewDir);
 app.set("view engine", "njk");
 
 nunjucks.configure(viewDir, {
