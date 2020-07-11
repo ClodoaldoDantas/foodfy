@@ -2,15 +2,14 @@
 
 {% block content %}
   <section class="admin-create">
-    <form action="/admin/recipes" method="POST" class="form">
+    <form action="/admin/recipes" method="POST">
       <div class="admin-header">
         <h1>Criando receita</h1>
         <button type="submit" class="btn">Salvar receita</button>
-        {% if message %}
-          <span class="error">* {{ message }}</span>
-        {% endif %}
       </div>
       {% include 'admin/fields.njk' %}
     </form>
   </section>
+
+  <script src="/js/fields.js"></script>
 {% endblock %}

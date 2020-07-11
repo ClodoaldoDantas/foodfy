@@ -1,4 +1,4 @@
-const links = document.querySelectorAll(".form a");
+const links = document.querySelectorAll("a[href^='#']");
 
 function addField(event) {
   event.preventDefault();

@@ -4,13 +4,13 @@
   <section class="detail">
     <div class="detail__action">
       <h2>Receita: {{ recipe.title }}</h2>
-      <a class="btn" href="/admin/recipes/{{id}}/edit">Editar receita</a>
+      <a class="btn" href="/admin/recipes/{{recipe.id}}/edit">Editar receita</a>
     </div>
 
     <header class="detail__header">
       <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
       <h1>{{ recipe.title }}</h1>
-      <span>por {{ recipe.author }}</span>
+      {# <span>por {{ recipe.author }}</span> #}
     </header>
 
     <div class="detail__content">

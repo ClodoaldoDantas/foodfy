@@ -1,21 +1,24 @@
-const data = require("../../data.json");
+const Recipe = require("../models/Recipe");
 
-exports.index = (req, res) => {
-  const filteredRecipes = data.recipes.slice(0, 6);
-  return res.render("pages/index", { recipes: filteredRecipes });
-};
+module.exports = {
+  index(req, res) {
+    Recipe.findAll()
+      .then((data) => res.render("pages/index", { recipes: data.rows }))
+      .catch((err) => console.log(err.message));
+  },
+  about(req, res) {
+    return res.render("pages/about");
+  },
+  recipes(req, res) {
+    Recipe.findAll()
+      .then((data) => res.render("pages/recipes", { recipes: data.rows }))
+      .catch((err) => console.log(err.message));
+  },
+  show(req, res) {
+    const { id } = req.params;
 
-exports.about = (req, res) => {
-  return res.render("pages/about");
-};
-
-exports.recipes = (req, res) => {
-  return res.render("pages/recipes", { recipes: data.recipes });
-};
-
-exports.show = (req, res) => {
-  const { id } = req.params;
-  const recipe = data.recipes[id];
-
-  return res.render("pages/recipe", { recipe });
+    Recipe.findById(id)
+      .then((data) => res.render("pages/recipe", { recipe: data.rows[0] }))
+      .catch((err) => console.log(err.message));
+  },
 };
