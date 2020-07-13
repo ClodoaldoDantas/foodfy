@@ -1,4 +1,4 @@
-const links = document.querySelectorAll("a[href^='#']");
+const buttons = document.querySelectorAll("a[href^='#']");
 
 function addField(event) {
   event.preventDefault();
@@ -14,6 +14,6 @@ function addField(event) {
   fieldContainer.appendChild(newField);
 }
 
-for (link of links) {
-  link.addEventListener("click", addField);
+for (button of buttons) {
+  button.addEventListener("click", addField);
 }

@@ -24,5 +24,6 @@ routes.put("/admin/recipes", recipes.put);
 routes.delete("/admin/recipes", recipes.delete);
 
 routes.get("/admin/chefs", chefs.index);
+routes.get("/admin/chefs/create", chefs.create);
 
 module.exports = routes;
