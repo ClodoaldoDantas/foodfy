@@ -3,9 +3,9 @@
 {% block content %}
   <section class="admin-save">
     <form action="/admin/recipes?_method=PUT" method="POST">
-      <div class="admin-header">
+      <div class="admin-heading">
         <h1>Editando receita</h1>
-        <div class="admin-header-actions">
+        <div class="admin-heading-actions">
           <button type="button" id="open" class="btn btn--danger">
             Deletar
           </button>
@@ -18,7 +18,7 @@
       </div>
 
       <input type="hidden" name="id" value={{ recipe.id }}>
-      {% include 'admin/fields.njk' %}
+      {% include 'admin/recipes/fields.njk' %}
     </form>
 
     <!-- MODAL -->
@@ -32,8 +32,10 @@
         </form>
       </div>
     </div>
-  </section>
+  </section>  
+{% endblock %}
 
+{% block scripts %}
   <script src="/js/fields.js"></script>
   <script src="/js/modal-delete.js"></script>
 {% endblock %}

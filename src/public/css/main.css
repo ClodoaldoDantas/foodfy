@@ -121,13 +121,6 @@ body {
   }
 }
 
-/* HEADER: ADMIN */
-.header__admin {
-  background-color: var(--color-black-regular);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 /** RECIPE: DETAIL **/
 .detail {
   padding: 5rem 0;

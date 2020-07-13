@@ -8,17 +8,23 @@
     <title>Foodfy | Admin</title>
   </head>
   <body>
-    <!-- HEADER -->
     <header class="header__admin">
       <div class="container">
-        <a class="header__brand" href="/admin/recipes">
+        <a class="brand" href="/admin/recipes">
           <img src="/assets/logo-white.png" alt="Foodfy" />
         </a>
+        <nav>
+          <a class="header__link" href="/admin/recipes">Receitas</a>
+          <a class="header__link" href="/admin/chefs">Chefs</a>
+        </nav>
       </div>
     </header>
 
     <main class="container">
       {% block content %}{% endblock %}
     </main>
+
+    <script src="/js/menu.js"></script>
+    {% block scripts %}{% endblock %}
   </body>
 </html>

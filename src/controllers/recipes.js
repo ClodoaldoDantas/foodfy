@@ -4,18 +4,20 @@ const { validateFields } = require("../utils/validate");
 module.exports = {
   index(req, res) {
     Recipe.findAll()
-      .then((data) => res.render("admin/index", { recipes: data.rows }))
+      .then((data) => res.render("admin/recipes/index", { recipes: data.rows }))
       .catch((err) => console.log(err.message));
   },
   show(req, res) {
     const { id } = req.params;
 
     Recipe.findById(id)
-      .then((data) => res.render("admin/show", { recipe: data.rows[0] }))
+      .then((data) =>
+        res.render("admin/recipes/show", { recipe: data.rows[0] })
+      )
       .catch((err) => console.log(err.message));
   },
   create(req, res) {
-    return res.render("admin/create");
+    return res.render("admin/recipes/create");
   },
   post(req, res) {
     const validate = validateFields({
@@ -35,7 +37,9 @@ module.exports = {
     const { id } = req.params;
 
     Recipe.findById(id)
-      .then((data) => res.render("admin/edit", { recipe: data.rows[0] }))
+      .then((data) =>
+        res.render("admin/recipes/edit", { recipe: data.rows[0] })
+      )
       .catch((err) => console.log(err.message));
   },
   put(req, res) {
