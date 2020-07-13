@@ -69,11 +69,6 @@ body {
   background-color: var(--red-color);
 }
 
-.error {
-  color: var(--red-color);
-  flex-basis: 100%;
-}
-
 /* HEADER */
 .header {
   padding-top: 4rem;

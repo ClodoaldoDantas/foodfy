@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/main.css" />
-    {% block head %}{% endblock %}
+    <link rel="stylesheet" href="/css/pages.css" />
     <title>Foodfy</title>
   </head>
   <body>
-    <!-- HEADER -->
     <header class="header">
       <div class="container">
         <a class="header__brand" href="/">
@@ -25,12 +24,10 @@
       {% block content %}{% endblock %}
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
       <p>Todos direitos reservados, receitas Foodfy.</p>
     </footer>
 
-    
     <script src="/js/menu.js"></script>
     {% block scripts %}{% endblock %}
   </body>
