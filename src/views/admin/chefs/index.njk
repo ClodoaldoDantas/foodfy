@@ -4,6 +4,18 @@
   <section class="admin-home">
     <h1>Gerenciar chefs</h1>
 
+    <div class="chefs">
+      {% for chef in chefs %}
+        <div class="chef">
+          <img src="{{ chef.avatar_url }}" alt="{{ chef.name }}">
+          <div class="chef__content">
+            <h2>{{ chef.name }}</h2>
+            <a href="/admin/chefs/{{chef.id}}">Visualizar</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
     <div class="admin-footer">
       <a class="btn" href="/admin/chefs/create">Novo Chef</a>
     </div>

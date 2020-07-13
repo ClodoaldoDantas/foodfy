@@ -3,11 +3,19 @@ const date = require("../utils/date");
 
 module.exports = {
   findAll() {
-    const query = "SELECT * FROM recipes";
+    const query = `
+      SELECT recipes.*, chefs.name as author 
+      FROM recipes INNER JOIN chefs ON recipes.chef_id = chefs.id
+    `;
+
     return db.query(query);
   },
   findById(id) {
-    const query = "SELECT * FROM recipes WHERE id = $1";
+    const query = `
+      SELECT recipes.*, chefs.name as author 
+      FROM recipes INNER JOIN chefs ON recipes.chef_id = chefs.id
+      WHERE recipes.id = $1
+    `;
     return db.query(query, [id]);
   },
   create(data) {
