@@ -18,6 +18,15 @@ module.exports = {
     `;
     return db.query(query, [id]);
   },
+  findOne(data) {
+    const column = Object.keys(data)[0];
+    const query = `
+      SELECT recipes.*, chefs.name as author 
+      FROM recipes INNER JOIN chefs ON recipes.chef_id = chefs.id
+      WHERE ${column} = $1
+    `;
+    return db.query(query, [data[column]]);
+  },
   create(data) {
     const query = `
       INSERT INTO recipes(
