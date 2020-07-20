@@ -6,7 +6,7 @@ const path = require("path");
 const app = express();
 const routes = require("./routes");
 const viewDir = path.resolve(__dirname, "views");
-const publicDir = path.resolve(__dirname, "public");
+const publicDir = path.resolve(__dirname, "..", "public");
 
 app.set("view engine", "njk");
 
