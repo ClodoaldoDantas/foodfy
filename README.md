@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="src/public/assets/chef.png" width="200"/>
+  <img src="public/assets/chef.png" width="200"/>
 </p>
 
 # Foodfy :pizza:
