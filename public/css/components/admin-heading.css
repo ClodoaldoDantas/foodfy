@@ -1,0 +1,16 @@
+/** CREATE/EDIT **/
+.admin-heading {
+  padding: 5rem 0 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-heading-actions {
+  display: flex;
+}
+
+.admin-heading-actions .btn:last-child {
+  margin-left: 1rem;
+}

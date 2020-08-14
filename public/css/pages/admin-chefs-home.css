@@ -1,0 +1,36 @@
+/* CHEFS: HOME */
+.chefs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 3rem;
+  align-items: center;
+}
+
+.chef {
+  display: flex;
+  align-items: center;
+}
+
+.chef img {
+  height: 6.4rem;
+  width: 6.4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chef__content {
+  margin-left: 2rem;
+}
+
+.chef__content h2 {
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+.chef__content a {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
