@@ -1,20 +1,22 @@
 {% extends "layout/admin.njk" %}
 
 {% block content %}
-  <section class="detail">
-    <div class="detail__action">
+  <section class="page-detail">
+    <div class="page-detail__action">
       <h2>Receita: {{ recipe.title }}</h2>
-      <a class="btn" href="/admin/recipes/{{recipe.id}}/edit">Editar receita</a>
+      <a class="button" href="/admin/recipes/{{recipe.id}}/edit">
+        Editar receita
+      </a>
     </div>
 
-    <header class="detail__header">
+    <header class="page-detail__header">
       <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
       <h1>{{ recipe.title }}</h1>
       <span>por {{ recipe.author }}</span>
     </header>
 
-    <div class="detail__content">
-      <div class="detail__heading">
+    <div class="page-detail__content">
+      <div>
         <h3>Ingredientes</h3>
       </div>
       
@@ -25,8 +27,8 @@
       </ul>
     </div>
 
-    <div class="detail__content">
-      <div class="detail__heading">
+    <div class="page-detail__content">
+      <div>
         <h3>Modo de preparo</h3>
       </div>
       <ul id="preparation">    
@@ -37,8 +39,8 @@
     </div>
 
     {% if recipe.information %}
-      <div class="detail__content">
-        <div class="detail__heading">
+      <div class="page-detail__content">
+        <div>
           <h3>Informações adicionais</h3>
         </div>
         <p id="information">{{ recipe.information }}</p>

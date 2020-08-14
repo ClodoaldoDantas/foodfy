@@ -1,4 +1,4 @@
-const modalContainer = document.querySelector(".modal-overlay");
+const modalContainer = document.querySelector(".modal__overlay");
 const btnOpen = document.querySelector("#open");
 const btnCancel = document.querySelector("#cancel");
 

@@ -1,18 +1,3 @@
-@import "base/reset.css";
-@import "base/helpers.css";
-
-@import "components/detail.css";
-@import "components/modal.css";
-@import "components/form.css";
-@import "components/admin-heading.css";
-
-@import "layout/header.css";
-@import "layout/header-admin.css";
-@import "layout/footer.css";
-
-@import "pages/homepage.css";
-@import "pages/recipes.css";
-@import "pages/about.css";
-@import "pages/admin-recipes-home.css";
-@import "pages/admin-chefs-home.css";
-@import "pages/admin-chefs-detail.css";
+@import "base.css";
+@import "components.css";
+@import "layout.css";

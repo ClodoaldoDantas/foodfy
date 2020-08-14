@@ -4,11 +4,11 @@
   <section class="admin-home">
     <h1>Gerenciar receitas</h1>
 
-    <div class="grid">
+    <div class="admin-grid">
       {% for recipe in recipes %}
-        <div class="item">
+        <div class="admin-grid__item">
           <div style="background-image: url({{ recipe.image }})"></div>
-          <div class="item__content">
+          <div>
             <h3>{{ recipe.title }}</h3>
             <span>por {{ recipe.author }}</span>
             <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
@@ -17,9 +17,7 @@
       {% endfor %}
     </div>
 
-    <div class="admin-footer">
-      <a class="btn" href="/admin/recipes/create">Nova receita</a>
-    </div>
+    <a class="button" href="/admin/recipes/create">Nova receita</a>
     
   </section>
 {% endblock %}
