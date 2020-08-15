@@ -1,6 +1,6 @@
 const Recipe = require("../models/Recipe");
 const Chef = require("../models/Chef");
-const { validateFields } = require("../utils/validate");
+const validateFields = require("../helpers/validate");
 
 module.exports = {
   async index(req, res) {

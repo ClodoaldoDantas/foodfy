@@ -1,5 +1,5 @@
 const db = require("../database/connection");
-const date = require("../utils/date");
+const date = require("../helpers/date");
 
 module.exports = {
   findAll() {

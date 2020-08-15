@@ -19,7 +19,7 @@ nunjucks.configure(viewDir, {
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(publicDir));
 app.use(methodOverride("_method"));
-app.use(routes);
+routes(app);
 
 app.listen(5000, () =>
   console.log("🚀 Server running on http://localhost:5000")

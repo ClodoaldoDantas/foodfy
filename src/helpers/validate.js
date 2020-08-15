@@ -1,4 +1,4 @@
-exports.validateFields = (data) => {
+module.exports = (data) => {
   const keys = Object.keys(data);
   let valid = true;
 
