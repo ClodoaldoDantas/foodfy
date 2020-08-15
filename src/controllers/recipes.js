@@ -1,4 +1,5 @@
 const Recipe = require("../models/Recipe");
+const Chef = require("../models/Chef");
 const { validateFields } = require("../utils/validate");
 
 module.exports = {
@@ -17,7 +18,9 @@ module.exports = {
       .catch((err) => console.log(err.message));
   },
   create(req, res) {
-    return res.render("admin/recipes/create");
+    Chef.findAll()
+      .then((data) => res.render("admin/recipes/create", { chefs: data.rows }))
+      .catch((err) => console.log(err.message));
   },
   post(req, res) {
     const validate = validateFields({
@@ -37,8 +40,15 @@ module.exports = {
     const { id } = req.params;
 
     Recipe.findById(id)
-      .then((data) =>
-        res.render("admin/recipes/edit", { recipe: data.rows[0] })
+      .then((recipe) =>
+        Chef.findAll()
+          .then((chefs) => {
+            res.render("admin/recipes/edit", {
+              recipe: recipe.rows[0],
+              chefs: chefs.rows,
+            });
+          })
+          .catch((err) => console.log(err.message))
       )
       .catch((err) => console.log(err.message));
   },

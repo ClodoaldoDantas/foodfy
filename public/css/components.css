@@ -271,7 +271,8 @@
 }
 
 .form__group input,
-.form__group textarea {
+.form__group textarea,
+.form__group select {
   width: 100%;
   padding: 1.5rem 2rem;
   border-radius: 0.4rem;
@@ -280,6 +281,10 @@
 
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
+}
+
+.form__group select {
+  background-color: #fff;
 }
 
 .form__group textarea {

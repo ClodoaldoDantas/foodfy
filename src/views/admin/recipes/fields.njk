@@ -9,6 +9,23 @@
 </div>
 
 <div class="form__group">
+  <label>* Chef</label>
+  <select name="chef_id">
+    {% for chef in chefs %}
+      {% if recipe.chef_id === chef.id %}
+        <option selected value="{{ chef.id }}">
+          {{ chef.name }}
+        </option>
+      {% else %}
+        <option value="{{ chef.id }}">
+          {{ chef.name }}
+        </option>
+      {% endif %}
+    {% endfor %}
+  </select>
+</div>
+
+<div class="form__group">
   <label>* Ingredientes</label>
   <div class="fields">
     {% if recipe.ingredients.length > 0 %}
