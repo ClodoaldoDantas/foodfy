@@ -2,9 +2,9 @@
 
 {% block content %}
   <section>
-    <form class="form" action="/admin/recipes?_method=PUT" method="POST">
+    <form class="form" action="/admin/chefs?_method=PUT" method="POST">
       <div class="form__group">
-        <h1>Editando receita</h1>
+        <h1>Editando chef</h1>
 
         <div>
           <button type="button" id="open" class="button button--danger">
@@ -14,24 +14,23 @@
         </div>
       </div>
 
-      <input type="hidden" name="id" value={{ recipe.id }}>
-      {% include 'admin/recipes/fields.njk' %}
+      <input type="hidden" name="id" value={{ chef.id }}>
+      {% include 'admin/chefs/fields.njk' %}
     </form>
 
     <div class="modal__overlay">
       <div class="modal">
-        <h3 class="modal__title">Deseja realmente remover este produto ?</h3>
-        <form class="modal__form" action="/admin/recipes?_method=DELETE" method="POST">
-          <input type="hidden" name="id" value={{ recipe.id }}>
+        <h3 class="modal__title">Deseja realmente remover o chefe ?</h3>
+        <form class="modal__form" action="/admin/chefs?_method=DELETE" method="POST">
+          <input type="hidden" name="id" value={{ chef.id }}>
           <button type="button" id="cancel" class="button">Cancelar</button>
           <button type="submit" class="button button--danger">Remover</button>
         </form>
       </div>
     </div>
-  </section>  
+  </section>
 {% endblock %}
 
 {% block scripts %}
-  <script src="/js/clone-field.js"></script>
   <script src="/js/modal-delete.js"></script>
 {% endblock %}

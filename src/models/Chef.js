@@ -22,4 +22,15 @@ module.exports = {
     const values = [data.name, data.avatar_url, date(Date.now()).iso];
     return db.query(query, values);
   },
+  update(data) {
+    const query = `
+      UPDATE chefs SET name = ($1), avatar_url = ($2) WHERE id = ($3)
+    `;
+    const values = [data.name, data.avatar_url, data.id];
+    return db.query(query, values);
+  },
+  delete(id) {
+    const query = "DELETE FROM chefs WHERE id = $1";
+    return db.query(query, [id]);
+  },
 };

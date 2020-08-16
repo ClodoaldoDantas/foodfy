@@ -6,7 +6,7 @@ module.exports = {
   async index(req, res) {
     try {
       const data = await Recipe.findAll();
-      res.render("admin/recipes/index", { recipes: data.rows });
+      return res.render("admin/recipes/index", { recipes: data.rows });
     } catch (err) {
       console.log(err.message);
     }
@@ -15,7 +15,7 @@ module.exports = {
     try {
       const { id } = req.params;
       const data = await Recipe.findById(id);
-      res.render("admin/recipes/show", { recipe: data.rows[0] });
+      return res.render("admin/recipes/show", { recipe: data.rows[0] });
     } catch (err) {
       console.log(err.message);
     }
@@ -23,7 +23,7 @@ module.exports = {
   async create(req, res) {
     try {
       const data = await Chef.findAll();
-      res.render("admin/recipes/create", { chefs: data.rows });
+      return res.render("admin/recipes/create", { chefs: data.rows });
     } catch (err) {
       console.log(err.message);
     }
@@ -40,7 +40,7 @@ module.exports = {
 
     try {
       await Recipe.create(req.body);
-      res.redirect("/admin/recipes");
+      return res.redirect("/admin/recipes");
     } catch (err) {
       console.log(err.message);
     }
@@ -51,7 +51,7 @@ module.exports = {
       const recipe = await Recipe.findById(id);
       const chefs = await Chef.findAll();
 
-      res.render("admin/recipes/edit", {
+      return res.render("admin/recipes/edit", {
         recipe: recipe.rows[0],
         chefs: chefs.rows,
       });
@@ -71,7 +71,7 @@ module.exports = {
 
     try {
       await Recipe.update(req.body);
-      res.redirect(`/admin/recipes/${req.body.id}`);
+      return res.redirect(`/admin/recipes/${req.body.id}`);
     } catch (err) {
       console.log(err.message);
     }
@@ -80,7 +80,7 @@ module.exports = {
     try {
       const { id } = req.body;
       await Recipe.delete(id);
-      res.redirect("/admin/recipes");
+      return res.redirect("/admin/recipes");
     } catch (err) {
       console.log(err.message);
     }
