@@ -1,15 +1,31 @@
 {% extends "layout/page.njk" %}
 
+{% block header_form %}
+  <form class="header__form" action="/recipes" method="GET">
+    <input 
+      value="{{ filter }}"
+      name="filter" 
+      type="text" 
+      placeholder="Buscar uma receita"
+    >
+    <button class="button button--small">Buscar</button>
+  </form>
+{% endblock %}
+
 {% block content %}
   <section class="recipes">
     <div class="recipes__grid">
-      {% for recipe in recipes %}
-        <div class="recipe" id="{{recipe.id}}">
-          <img src="{{ recipe.image }}" alt="{{ recipe.title }}" />
-          <h3>{{ recipe.title }}</h3>
-          <span>por {{ recipe.author }}</span>
-        </div>
-      {% endfor %}
+      {% if recipes.length > 0 %}
+        {% for recipe in recipes %}
+          <div class="recipe" id="{{recipe.id}}">
+            <img src="{{ recipe.image }}" alt="{{ recipe.title }}" />
+            <h3>{{ recipe.title }}</h3>
+            <span>por {{ recipe.author }}</span>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="alert">Nenhuma receita encontrada 👨‍🍳</p>
+      {% endif %}
     </div>
   </section>
 {% endblock %}

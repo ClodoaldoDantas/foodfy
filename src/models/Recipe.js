@@ -2,11 +2,17 @@ const db = require("../database/connection");
 const date = require("../helpers/date");
 
 module.exports = {
-  findAll() {
-    const query = `
+  findAll(filter = "") {
+    let query = `
       SELECT recipes.*, chefs.name as author 
       FROM recipes INNER JOIN chefs ON recipes.chef_id = chefs.id
     `;
+
+    if (filter) {
+      query += `WHERE recipes.title ILIKE '%${filter}%'`;
+    }
+
+    console.log(query);
 
     return db.query(query);
   },
