@@ -12,8 +12,6 @@ module.exports = {
       query += `WHERE recipes.title ILIKE '%${filter}%'`;
     }
 
-    console.log(query);
-
     return db.query(query);
   },
   findById(id) {
