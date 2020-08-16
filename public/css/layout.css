@@ -186,7 +186,7 @@
   }
 }
 
-/* ADMIN: CHEFS */
+/* CHEFS */
 .chefs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -221,4 +221,14 @@
   font-size: 1.4rem;
   font-weight: bold;
   color: var(--primary-color);
+}
+
+.chef__content span {
+  font-size: 1.4rem;
+  color: #666666;
+}
+
+/* PAGE CHEFS */
+.page-chefs {
+  padding: 5rem 0;
 }

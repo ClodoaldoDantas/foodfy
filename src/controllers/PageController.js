@@ -1,4 +1,5 @@
 const Recipe = require("../models/Recipe");
+const Chef = require("../models/Chef");
 
 module.exports = {
   async index(req, res) {
@@ -35,6 +36,14 @@ module.exports = {
       const { id } = req.params;
       const data = await Recipe.findById(id);
       return res.render("pages/recipe", { recipe: data.rows[0] });
+    } catch (err) {
+      console.log(err.message);
+    }
+  },
+  async chefs(req, res) {
+    try {
+      const data = await Chef.find();
+      res.render("pages/chefs", { chefs: data.rows });
     } catch (err) {
       console.log(err.message);
     }

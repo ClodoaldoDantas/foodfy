@@ -6,6 +6,14 @@ module.exports = {
     const query = "SELECT * FROM chefs";
     return db.query(query);
   },
+  find() {
+    const query = `
+      SELECT chefs.*, count(recipes) as total_recipes FROM chefs
+      LEFT JOIN recipes ON chefs.id = recipes.chef_id
+      GROUP BY chefs.id;
+    `;
+    return db.query(query);
+  },
   findById(id) {
     const query = `
       SELECT chefs.*, count(recipes) as total_recipes FROM chefs

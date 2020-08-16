@@ -10,8 +10,10 @@
     <header class="page-detail__chef">
       <img src="{{ chef.avatar_url }}" alt="{{ chef.name }}">
       <h1>{{ chef.name }}</h1>
-      {% if chef.total_recipes > 0 %}
+      {% if chef.total_recipes > 1 %}
         <span>{{ chef.total_recipes }} receitas</span>
+      {% elif chef.total_recipes == 1 %}
+        <span>{{ chef.total_recipes }} receita</span>
       {% else %}
         <span>sem receitas</span>
       {% endif %}
